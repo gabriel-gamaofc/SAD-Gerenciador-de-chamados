@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+/* Ajuste opcional para o corpo da página */
+body {
+  margin: 0;
+}
+
+/* Estilo para o contêiner principal */
+.container-main {
+  display: flex;
+  height: 100vh;
+  width: 100%; /* Ocupa toda a largura da tela */
+}
+
+/* Estilo para o contêiner do List Group */
+.list-group-container {
+  flex: 0 0 20%;
+  background-color: #f8f9fa;
+  border-right: 1px solid #dee2e6;
+  overflow-y: auto;
+}
+
+/* Estilo para o conteúdo da página */
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  max-width: calc(100% - 20%); /* Definindo a largura máxima */
+ 
+}
+
+.list-group-item a {
+    display: block; /* O link ocupa toda a largura do item */
+    padding: 0.75rem 1.25rem; /* Espaçamento interno do link */
+    color: #007bff; /* Cor do link */
+    text-decoration: none; /* Remove o sublinhado */
+    cursor: pointer; /* Altera o cursor para indicar que é clicável */
+}
+
+.list-group-item a:hover {
+    background-color: #f8f9fa; /* Altera a cor de fundo ao passar o mouse */
+}
+
+.list-group-item a:focus {
+    background-color: #e2e6ea; /* Altera a cor de fundo ao focar */
+}
+
+header {
+    margin-top: 0;
+    background-color: blue;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+
+
+
+button {
+  cursor: pointer;
+}
+
+#titulo-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#btnOpenForm{
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: rgb(57, 57, 226);
+  
+}
+
+.container {
+  width: 90%;
+ height: 80%;
+  border-radius: 10px;
+  background: white;
+  margin: 0;
+  margin-right: 100px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.card-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-child span {
+  margin-right: 10px; /* Adiciona um espaçamento entre as informações */
+}
+
+.card button {
+  padding: 5px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+
+
+
+
+
+
+.new-form-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Adiciona uma cor de fundo semi-transparente */
+  display: none; /* Inicialmente oculto */
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+.newMaquinaForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background-color: white;
+  border-radius: 10px;
+  width: 50%;
+  max-width: 400px; /* Limita a largura máxima do formulário */
+}
+
+.newMaquinaForm label {
+  font-size: 14px;
+  width: 100%;
+}
+
+.newMaquinaForm input[type="text"],
+.newMaquinaForm input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc; /* Adiciona uma borda */
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.newMaquinaForm button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background-color: #395ee2; /* Altera a cor do botão */
+  color: white;
+  cursor: pointer;
+}
+
+.newMaquinaForm button:hover {
+  background-color: #0056b3;
+}
+
+.newMaquinaForm button#btnCancel {
+  background-color: #6c757d;
+}
+
+.newMaquinaForm button#btnCancel:hover {
+  background-color: #5a6268;
+}

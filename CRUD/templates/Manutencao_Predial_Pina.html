@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manutenção Preidal PIna</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Manutencao_Predial_Pina.css') }}">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+
+
+  <header>
+    <h1>Expresso Conectado</h1>
+  </header>
+  <input type="hidden" id="chamadoId" name="chamadoId">
+  <div class="container-main">
+    <!-- Contêiner do List Group -->
+    <div class="list-group-container">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <a href="#" data-toggle="collapse" data-target="#opcao1">EC-Pina</a>
+          <ul class="list-unstyled collapse" id="opcao1">
+            <li><a href="/info/principal_sit_geral_Ecpina.html">Situação geral</a></li>
+            <li><a href="/Manutencao_Predial_Pina">Manutenção Predial Pina</a></li>
+            <li><a href="/Autenticacao_Centralizada_Pina">Autenticação Centralizada</a></li>
+            <li><a href="/Chamados_TI_Pina">Chamados de T.I</a></li>
+            <li><a href="/Cadastro_Maquinas_Pina">Cadastro de Maquinas</a></li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <a href="#" data-toggle="collapse" data-target="#opcao2">Ec-Boa Vista</a>
+          <ul class="list-unstyled collapse" id="opcao2">
+            <li><a href="#">Situação geral</a></li>
+            <li><a href="#">UTM</a></li>
+            <li><a href="#">Nobreak</a></li>
+            <li><a href="#">Autenticação Centralizada</a></li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <a href="#" data-toggle="collapse" data-target="#opcao3">Ec-Olinda</a>
+          <ul class="list-unstyled collapse" id="opcao3">
+            <li><a href="#">Situação geral</a></li>
+            <li><a href="#">UTM</a></li>
+            <li><a href="#">Nobreak</a></li>
+            <li><a href="#">Autenticação Centralizada</a></li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <a href="#" data-toggle="collapse" data-target="#opcao4">Ec-Vitoria</a>
+          <ul class="list-unstyled collapse" id="opcao4">
+            <li><a href="#">Situação geral</a></li>
+            <li><a href="#">UTM</a></li>
+            <li><a href="#">Nobreak</a></li>
+            <li><a href="#">Autenticação Centralizada</a></li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <a href="#" data-toggle="collapse" data-target="#opcao5">Ec-Caruaru</a>
+          <ul class="list-unstyled collapse" id="opcao5">
+            <li><a href="#">Situação geral</a></li>
+            <li><a href="#">UTM</a></li>
+            <li><a href="#">Nobreak</a></li>
+            <li><a href="#">Autenticação Centralizada</a></li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <a href="#" data-toggle="collapse" data-target="#opcao6">Ec-Garanhuns</a>
+          <ul class="list-unstyled collapse" id="opcao6">
+            <li><a href="#">Situação geral</a></li>
+            <li><a href="#">UTM</a></li>
+            <li><a href="#">Nobreak</a></li>
+            <li><a href="#">Autenticação Centralizada</a></li>
+          </ul>
+        </li>
+
+        <li class="list-group-item">
+          <a href="#" data-toggle="collapse" data-target="#opcao7">Ec-Salgueiro</a>
+          <ul class="list-unstyled collapse" id="opcao7">
+            <li><a href="#">Situação geral</a></li>
+            <li><a href="#">UTM</a></li>
+            <li><a href="#">Nobreak</a></li>
+            <li><a href="#">Autenticação Centralizada</a></li>
+          </ul>
+        </li>
+
+        <li class="list-group-item">
+          <a href="#" data-toggle="collapse" data-target="#opcao8">Ec-Petrolina</a>
+          <ul class="list-unstyled collapse" id="opcao8">
+            <li><a href="#">Situação geral</a></li>
+            <li><a href="#">UTM</a></li>
+            <li><a href="#">Nobreak</a></li>
+            <li><a href="#">Autenticação Centralizada</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- Conteúdo da página -->
+    <div class="content">
+      <div id="titulo-menu">
+        <h1>Predial do Pina</h1>
+        <button id="btnOpenForm" onclick=" openModal()">Abrir Chamado</button>
+      </div>
+      <!-- Formulário de adição (inicialmente oculto) -->
+      <div class="new-form-container" id="newFormContainer">
+        <div class="newMaquinaForm">
+          <form id="chamadoForm">
+            <div class="form-group">
+              <label for="orgao">Orgão:</label>
+              <select class="form-control" id="orgao" required>
+                <option value="Compesa">Compesa</option>
+                <option value="Agência do trabalho">Agência do trabalho</option>
+                <option value="FUNAPE">FUNAPE</option>
+                <option value="Capitania dos portos">Capitania dos portos</option>
+                <option value="Detran">Detran</option>
+                <option value="Procon">Procon</option>
+                <option value="SDS">SDS</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="ip">Requerente:</label>
+              <input type="text" id="ip" class="form-control" placeholder="Requerente" required>
+            </div>
+            <div class="form-group">
+              <label for="tombamento">Solicitação:</label>
+              <input type="text" id="tombamento" class="form-control" placeholder="Solicitação" required>
+            </div>
+            <div class="form-group">
+              <label for="status">Status:</label>
+              <select id="status" class="form-control" required>                
+                <option value="Não visto">Não visto</option>
+                <option value="Resolvido">Resolvido</option>
+                <option value="Em andamento">Em andamento</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <button type="button" id="btnCancel" class="btn btn-secondary">Cancelar</button>
+            
+          </form>
+        </div>
+      </div>
+
+      <!-- Lista de máquinas -->
+      <div class="card" id="chamadosList"></div>
+
+
+
+
+    </div>
+  </div>
+
+  <!-- Adicionando scripts -->
+  <script src="{{ url_for('static', filename='Manutencao_Predial_Pina.js') }}"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>
