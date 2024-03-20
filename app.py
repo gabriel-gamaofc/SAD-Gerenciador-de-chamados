@@ -19,10 +19,10 @@ app = Flask(__name__)
 
 # Configurar a conexão com o banco de dados MySQL
 connection = mysql.connector.connect(
-    host='10.1.106.8',
-    user='dba',
-    password='Sad#Suporte',
-    database='expresso_conectado'
+    host='',#ip da maquina de conexão com o banco 
+    user='',#usuario do banco de dados
+    password='',#Senha do usuario
+    database=''#Qual database
 )
 
 
@@ -79,7 +79,7 @@ def Cadastro_Maquinas_Pina():
 @app.route('/Chamados_TI_Pina')
 def Chamados_TI_Pina():
       # Extrair o ID da planilha do URL
-    sheet_url = 'https://docs.google.com/spreadsheets/d/1kScU9vffzZh76fUDMukYZF35j6MTGZc6ebP66KPbCEI/edit?usp=sharing'
+    sheet_url = '' # link da planilha 
     
     sheet_id = sheet_url.split('/')[-2]
 
@@ -96,10 +96,10 @@ def Chamados_TI_Pina():
 
         # Inicializar a conexão com o banco de dados
         connection = mysql.connector.connect(
-           host='localhost',
-           user='dba',
-           password='Sad#Suporte',
-           database='expresso_conectado'
+            host='',#ip da maquina de conexão com o banco 
+            user='',#usuario do banco de dados
+            password='',#Senha do usuario
+            database=''#Qual database
         )
         
         # Criar o cursor
@@ -158,7 +158,7 @@ def Autenticacao_Centralizada_Pina():
 
 @app.route('/Controle_Patrimonial_Pina')
 def Controle_Patrimonial_Pina():
-    sheet_url = "https://docs.google.com/spreadsheets/d/1GChEXYjREHpozDMpH1jivxrSXgRRTyhbPf7LTzy3n8Y/edit?usp=sharing"
+    sheet_url = ""# Link da planilha
 
     # Extrair o ID da planilha do URL
     sheet_id = sheet_url.split('/')[-2]
@@ -235,7 +235,7 @@ def Controle_Patrimonial_Pina():
 # Rota para abrir Manutenção Predial pina
 @app.route('/Manutencao_Predial_Pina')
 def Manutencao_Predial_Pina():
-    sheet_url = "https://docs.google.com/spreadsheets/d/1nGNg7bm_0Zhn5VQ0QMcGp5t55KZNhZqzQU_q4LPR--s/edit?usp=sharing"
+    sheet_url = ""#Link da planilha
 
     # Extrair o ID da planilha do URL
     sheet_id = sheet_url.split('/')[-2]
@@ -368,7 +368,7 @@ def preencher_formulario():
     driver = webdriver.Chrome()
 
     # Navegar até a URL do formulário
-    driver.get('https://docs.google.com/forms/d/e/1FAIpQLScoG84h7UBbDJ4KCY8R7Ygd5iWZWqo6av5_CjTVAvHEbQT_4g/viewform')
+    driver.get('#Link do formulario')
 
    
     time.sleep(5)
@@ -531,7 +531,7 @@ def preencher_formulario_predial():
     driver = webdriver.Chrome()
 
     # Navegar até a URL do formulário
-    driver.get('https://docs.google.com/forms/d/e/1FAIpQLSdXsHjKVzzBp7OKs7xo6-NuwHUkUgQLYZ1UZPWYa2rg1Yv2gA/viewform?usp=sf_link')
+    driver.get('#Link do formulario')
 
    
     time.sleep(5)
@@ -645,7 +645,7 @@ def preencher_formulario_controle_patrimonial():
     driver = webdriver.Chrome()
 
     # Navegar até a URL do formulário
-    driver.get('https://docs.google.com/forms/d/e/1FAIpQLSdqTH_L-1izXy1pn0lNtSiWkvEOw3lI5iSERfAWqNBDaEBI2w/viewform?usp=sf_link')
+    driver.get('#Link do fomulario')
 
    
     time.sleep(5)
