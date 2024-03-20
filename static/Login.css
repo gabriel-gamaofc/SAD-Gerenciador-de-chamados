@@ -1,0 +1,378 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+.container {
+    display: flex;
+    height: 100%;
+}
+.logo-container {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #040c74;; /* Cor azul para o lado da logo */
+}
+.logo img {
+    width: 900px; /* Define a largura da imagem */
+    height: 309px; /* Define a altura da imagem */
+}
+.login-container {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (min-width: 769px), print {
+.column.is-8, .column.is-8-tablet
+{
+flex: none;
+width: 66.66667%;
+}
+}
+@media screen and (min-width: 769px), print {
+.column.is-offset-2, .column.is-offset-2-tablet
+{
+margin-left: 16.66667%;
+}
+}
+.column
+{
+display: block;
+flex-basis: 0;
+flex-grow: 1;
+flex-shrink: 1;
+padding: .75rem;
+box-sizing: border-box; /* Adiciona essa linha */
+}
+*, ::after, ::before
+{
+box-sizing: inherit;
+}
+
+.box
+{
+background-color: #fff;
+border-radius: 6px;
+box-shadow: 0 2px 3px rgba(10,10,10,.1),0 0 0 1px rgba(10,10,10,.1);
+color: #4a4a4a;
+display: block;
+padding: 1.25rem;
+}
+*, ::after, ::before
+{
+box-sizing: inherit;
+}  
+
+.has-text-centered
+{
+text-align: center !important;
+
+}
+*, ::after, ::before
+{
+box-sizing: inherit;
+}
+.label.is-medium
+{
+
+font-size: 1.25rem;
+}
+.label:not(:last-child)
+{
+margin-bottom: .5em;
+}
+.label
+{
+color: #363636;
+display: block;
+font-size: 1rem;
+font-weight: 700;
+}
+*, ::after, ::before
+{
+box-sizing: inherit;
+}
+
+.input.is-medium, .textarea.is-medium
+{
+width: 590px;
+font-size: 1.25rem;
+box-shadow: inset 0 1px 10px rgba(10,10,10,.1);
+border: 1px solid #ccc;
+
+}
+.input.is-hovered, .input:hover, .textarea.is-hovered, .textarea:hover
+{
+border-color: #b5b5b5;
+}
+.input, .textarea
+{
+background-color: #fff;
+border-color: #dbdbdb;
+color: #363636;
+box-shadow: inset 0 1px 2px rgba(10,10,10,.1);
+max-width: 100%;
+width: 100%;
+}
+.button, .file-cta, .file-name, .input, .pagination-ellipsis, .pagination-link, .pagination-next, .pagination-previous, .select select, .textarea
+{
+-moz-appearance: none;
+-webkit-appearance: none;
+align-items: center;
+border: 1px solid transparent;
+border-top-color: transparent;
+border-right-color: transparent;
+border-bottom-color: transparent;
+border-left-color: transparent;
+border-radius: 4px;
+box-shadow: none;
+display: inline-flex;
+font-size: 1rem;
+height: 2.25em;
+justify-content: flex-start;
+line-height: 1.5;
+padding-bottom: calc(.375em - 1px);
+padding-left: calc(.625em - 1px);
+padding-right: calc(.625em - 1px);
+padding-top: calc(.375em - 1px);
+position: relative;
+vertical-align: top;
+}
+body, button, input, select, textarea
+{
+font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+button, input, select, textarea
+{
+margin: 0;
+}
+*, ::after, ::before
+{
+box-sizing: inherit;
+}
+.label.is-medium
+{
+font-size: 1.25rem;
+}
+.label:not(:last-child)
+{
+margin-bottom: .5em;
+}
+.label
+{
+color: #363636;
+display: block;
+font-size: 1rem;
+font-weight: 700;
+}
+*, ::after, ::before
+{
+box-sizing: inherit;
+}
+.input.is-medium, .textarea.is-medium
+{
+font-size: 1.25rem;
+}
+.input.is-hovered, .input:hover, .textarea.is-hovered, .textarea:hover
+{
+border-color: #b5b5b5;
+}
+.input, .textarea
+{
+background-color: #fff;
+border-color: #dbdbdb;
+color: #363636;
+box-shadow: inset 0 1px 2px rgba(10,10,10,.1);
+max-width: 100%;
+width: 100%;
+}
+.button, .file-cta, .file-name, .input, .pagination-ellipsis, .pagination-link, .pagination-next, .pagination-previous, .select select, .textarea
+{
+-moz-appearance: none;
+-webkit-appearance: none;
+align-items: center;
+border: 1px solid transparent;
+border-top-color: transparent;
+border-right-color: transparent;
+border-bottom-color: transparent;
+border-left-color: transparent;
+border-radius: 4px;
+box-shadow: none;
+display: inline-flex;
+font-size: 1rem;
+height: 2.25em;
+justify-content: flex-start;
+line-height: 1.5;
+padding-bottom: calc(.375em - 1px);
+padding-left: calc(.625em - 1px);
+padding-right: calc(.625em - 1px);
+padding-top: calc(.375em - 1px);
+position: relative;
+vertical-align: top;
+}
+body, button, input, select, textarea
+{
+font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+button, input, select, textarea
+{
+margin: 0;
+}
+*, ::after, ::before
+{
+box-sizing: inherit;
+}
+.control
+{
+font-size: 1rem;
+text-align: left;
+}
+
+.input.is-medium, .textarea.is-medium
+{
+font-size: 1.25rem;
+}
+.input, .textarea
+{
+background-color: #fff;
+border-color: #dbdbdb;
+color: #363636;
+box-shadow: inset 0 1px 2px rgba(10,10,10,.1);
+max-width: 100%;
+width: 100%;
+}
+.button, .file-cta, .file-name, .input, .pagination-ellipsis, .pagination-link, .pagination-next, .pagination-previous, .select select, .textarea
+{
+-moz-appearance: none;
+-webkit-appearance: none;
+align-items: center;
+border: 1px solid transparent;
+border-top-color: transparent;
+border-right-color: transparent;
+border-bottom-color: transparent;
+border-left-color: transparent;
+border-radius: 4px;
+box-shadow: none;
+display: inline-flex;
+font-size: 1rem;
+height: 2.25em;
+justify-content: flex-start;
+line-height: 1.5;
+padding-bottom: calc(.375em - 1px);
+padding-left: calc(.625em - 1px);
+padding-right: calc(.625em - 1px);
+padding-top: calc(.375em - 1px);
+position: relative;
+vertical-align: top;
+}
+body, button, input, select, textarea
+{
+font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+button, input, select, textarea
+{
+margin: 0;
+}
+*, ::after, ::before
+{
+box-sizing: inherit;
+}
+
+
+.button.is-dark.is-hovered, .button.is-dark:hover
+{
+background-color: #2f2f2f;
+border-color: transparent;
+color: #f5f5f5;
+}
+.button.is-fullwidth
+{
+display: flex;
+width: 100%;
+}
+.button.is-medium
+{
+font-size: 1.25rem;
+}
+.button.is-dark
+{
+background-color: #363636;
+border-color: transparent;
+color: #f5f5f5;
+}
+.button.is-hovered, .button:hover
+{
+border-color: #b5b5b5;
+color: #363636;
+}
+.is-dark
+{
+background-color: #004a83 !important;
+}
+.button
+{
+background-color: #fff;
+border-color: #dbdbdb;
+border-width: 1px;
+color: #363636;
+cursor: pointer;
+justify-content: center;
+padding-bottom: calc(.375em - 1px);
+padding-left: .75em;
+padding-right: .75em;
+padding-top: calc(.375em - 1px);
+text-align: center;
+white-space: nowrap;
+}
+.button, .file-cta, .file-name, .input, .pagination-ellipsis, .pagination-link, .pagination-next, .pagination-previous, .select select, .textarea
+{
+-moz-appearance: none;
+-webkit-appearance: none;
+align-items: center;
+border: 1px solid #e1e1e100;
+border-top-width: 1px;
+border-top-color: rgba(225, 225, 225, 0);
+border-right-width: 1px;
+border-right-color: rgba(225, 225, 225, 0);
+border-bottom-width: 1px;
+border-bottom-color: rgba(225, 225, 225, 0);
+border-left-width: 1px;
+border-left-color: rgba(225, 225, 225, 0);
+border-radius: 4px;
+box-shadow: none;
+display: inline-flex;
+font-size: 1rem;
+height: 2.25em;
+justify-content: flex-start;
+line-height: 1.5;
+padding-bottom: calc(.375em - 1px);
+padding-left: calc(.625em - 1px);
+padding-right: calc(.625em - 1px);
+padding-top: calc(.375em - 1px);
+position: relative;
+vertical-align: top;
+}
+.breadcrumb, .button, .delete, .file, .is-unselectable, .modal-close, .pagination-ellipsis, .pagination-link, .pagination-next, .pagination-previous, .tabs
+{
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+body, button, input, select, textarea
+{
+font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+button, input, select, textarea
+{
+margin: 0;
+}
+*, ::after, ::before
+{
+box-sizing: inherit;
+}
