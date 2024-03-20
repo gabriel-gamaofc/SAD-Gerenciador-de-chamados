@@ -81,7 +81,5 @@ id integer primary key auto_increment,
 email varchar(250),
 senha varchar(250)
 );
-DROP TABLE Aut_cent_pina;
 
-insert into usuarios (email,senha) values('edson.jrosa@sad.pe.gov.br','Minho24$');
 select * from Aut_cent_pina;
