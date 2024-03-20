@@ -20,7 +20,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 - Você instalou a versão mais recente de `<Python 3.12 / Node.js / Selenium / Mysql-conector/ Flask / Mysql>`
-- Você tem uma máquina `<Windows/>`. W7,W10 em diante.
+- Você tem uma máquina `Windows`. W7,W10 em diante.
 
 
 ## 🚀 Instalando Sistema de gerênciamento
@@ -61,9 +61,9 @@ pip install mysql.connector
 pip install mysql-connector-python
 ```
 
-## ☕ Usando <Sistema de Gerênciamento>
+## ☕ Usando Sistema de Gerênciamento
 
-Para usar <nome_do_projeto>, siga estas etapas:
+Para usar o Sistema de Gerênciamento, siga estas etapas:
 
 ```
 Python app.py
