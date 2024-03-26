@@ -20,10 +20,10 @@ def get_responses_from_sheet(sheet_url):
 
         # Inicializar a conexão com o banco de dados
         connection = mysql.connector.connect(
-           host='localhost',
-           user='dba',
-           password='Sad#Suporte',
-           database='expresso_conectado'
+           host='',
+           user='',
+           password='',
+           database=''
         )
         
         # Criar o cursor
@@ -76,5 +76,5 @@ def get_responses_from_sheet(sheet_url):
         print("Falha ao obter respostas da planilha.")
 
 # Exemplo de uso
-sheet_url = "https://docs.google.com/spreadsheets/d/1GChEXYjREHpozDMpH1jivxrSXgRRTyhbPf7LTzy3n8Y/edit?usp=sharing"
+sheet_url = ""
 get_responses_from_sheet(sheet_url)
