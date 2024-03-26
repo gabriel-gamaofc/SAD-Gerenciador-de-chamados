@@ -19,10 +19,10 @@ app = Flask(__name__)
 
 # Configurar a conexão com o banco de dados MySQL
 connection = mysql.connector.connect(
-    host='',#ip da maquina de conexão com o banco 
-    user='',#usuario do banco de dados
-    password='',#Senha do usuario
-    database=''#Qual database
+    host='10.1.106.8',
+    user='dba',
+    password='Sad#Suporte',
+    database='expresso_conectado'
 )
 
 
@@ -64,6 +64,10 @@ def index_main():
     return render_template('index.html')
 
 
+@app.route('/geral_pina')
+def sit_geral_Pina():
+    return render_template('principal_sit_geral_Ecpina.html')
+
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Rota para servir o arquivo index.html
 #@app.route('/')
@@ -79,7 +83,7 @@ def Cadastro_Maquinas_Pina():
 @app.route('/Chamados_TI_Pina')
 def Chamados_TI_Pina():
       # Extrair o ID da planilha do URL
-    sheet_url = '' # link da planilha 
+    sheet_url = 'https://docs.google.com/spreadsheets/d/1kScU9vffzZh76fUDMukYZF35j6MTGZc6ebP66KPbCEI/edit?usp=sharing'
     
     sheet_id = sheet_url.split('/')[-2]
 
@@ -96,10 +100,10 @@ def Chamados_TI_Pina():
 
         # Inicializar a conexão com o banco de dados
         connection = mysql.connector.connect(
-            host='',#ip da maquina de conexão com o banco 
-            user='',#usuario do banco de dados
-            password='',#Senha do usuario
-            database=''#Qual database
+           host='localhost',
+           user='dba',
+           password='Sad#Suporte',
+           database='expresso_conectado'
         )
         
         # Criar o cursor
@@ -117,7 +121,7 @@ def Chamados_TI_Pina():
                 print(f"Resposta {index} não contém dados relevantes. Ignorando...")
                 continue
 
-            # Obter os campos relevantes
+             # Obter os campos relevantes
             data_solicitacao = datetime.strptime(response_data[0], '%m/%d/%Y %H:%M:%S')
             orgao = response_data[1]
             requerente = response_data[2]
@@ -158,7 +162,7 @@ def Autenticacao_Centralizada_Pina():
 
 @app.route('/Controle_Patrimonial_Pina')
 def Controle_Patrimonial_Pina():
-    sheet_url = ""# Link da planilha
+    sheet_url = "https://docs.google.com/spreadsheets/d/1GChEXYjREHpozDMpH1jivxrSXgRRTyhbPf7LTzy3n8Y/edit?usp=sharing"
 
     # Extrair o ID da planilha do URL
     sheet_id = sheet_url.split('/')[-2]
@@ -235,7 +239,7 @@ def Controle_Patrimonial_Pina():
 # Rota para abrir Manutenção Predial pina
 @app.route('/Manutencao_Predial_Pina')
 def Manutencao_Predial_Pina():
-    sheet_url = ""#Link da planilha
+    sheet_url = "https://docs.google.com/spreadsheets/d/1nGNg7bm_0Zhn5VQ0QMcGp5t55KZNhZqzQU_q4LPR--s/edit?usp=sharing"
 
     # Extrair o ID da planilha do URL
     sheet_id = sheet_url.split('/')[-2]
@@ -366,9 +370,9 @@ def preencher_formulario():
     tipo = data.get('tipo')
     solicitacao = data.get('solicitacao')
     driver = webdriver.Chrome()
-
+   
     # Navegar até a URL do formulário
-    driver.get('#Link do formulario')
+    driver.get('https://docs.google.com/forms/d/e/1FAIpQLScoG84h7UBbDJ4KCY8R7Ygd5iWZWqo6av5_CjTVAvHEbQT_4g/viewform')
 
    
     time.sleep(5)
@@ -531,7 +535,7 @@ def preencher_formulario_predial():
     driver = webdriver.Chrome()
 
     # Navegar até a URL do formulário
-    driver.get('#Link do formulario')
+    driver.get('https://docs.google.com/forms/d/e/1FAIpQLSdXsHjKVzzBp7OKs7xo6-NuwHUkUgQLYZ1UZPWYa2rg1Yv2gA/viewform?usp=sf_link')
 
    
     time.sleep(5)
@@ -629,7 +633,7 @@ def delete_chamadosPrediaisPina(id):
 
 
 #--------------------------------------------------------------------------------------------------------------controle patrimonial---------------------------------------------------------------
-
+  
 @app.route('/api/preencher-formulario-controle-patrimonial', methods=['POST'])
 def preencher_formulario_controle_patrimonial():
     # Obter os dados do formulário enviados pela requisição POST
@@ -645,7 +649,7 @@ def preencher_formulario_controle_patrimonial():
     driver = webdriver.Chrome()
 
     # Navegar até a URL do formulário
-    driver.get('#Link do fomulario')
+    driver.get('https://docs.google.com/forms/d/e/1FAIpQLSdqTH_L-1izXy1pn0lNtSiWkvEOw3lI5iSERfAWqNBDaEBI2w/viewform?usp=sf_link')
 
    
     time.sleep(5)
@@ -767,6 +771,92 @@ def update_controlepatrimonialPina(id):
     connection.commit()
     cursor.close()
     return jsonify(message='Equipamento predial excluído com sucesso!', id=id)
+
+
+#--------------------------------------------------------------------------------------------------------------Situação geral do Pina----------------------------------------------------------------------------------------
+# Rota para Conseguir a quantidade de atendimentos totais feitos.
+# Inicializar a conexão com o banco de dados
+conexao = mysql.connector.connect(
+    host='localhost',
+    user='dba',
+    password='Sad#Suporte',
+    database='ec_pina'
+)
+        
+# Criar o cursor
+exe = conexao.cursor()
+@app.route('/api/sitgeralpina')
+def get_contagem():
+    exe = conexao.cursor(dictionary=True)
+    exe.execute('SELECT count(id) FROM recepcao where sit_atendimento="Atendido"')
+    chamados = exe.fetchall()
+    exe.close()
+    return jsonify(chamados)
+
+
+exe = conexao.cursor()
+@app.route('/api/sitprioritarios')
+def get_contagem_pri():
+    exe = conexao.cursor(dictionary=True)
+    exe.execute('SELECT count(id) FROM recepcao where sit_atendimento="Atendido" and tipo="Prioritario"')
+    chamados = exe.fetchall()
+    exe.close()
+    return jsonify(chamados)
+
+
+@app.route('/api/tma')
+def get_contagem_tma():
+    exe = conexao.cursor(dictionary=True)
+    exe.execute('SELECT AVG(TIMESTAMPDIFF(MINUTE, hora_inicio_atendimento, hora_fim_atedimento)) AS media_atendimento FROM atendente; ')
+    result = exe.fetchone()  # Fetchone para obter apenas uma linha
+    media_atendimento = result['media_atendimento']  # Acessa a coluna corretamente
+    formatted_media_atendimento = str(media_atendimento)  # Converta para uma string
+    exe.close()
+    
+    # Adicionando logs de depuração
+    print("Resultado da consulta:", result)
+    print("Tempo médio formatado:", formatted_media_atendimento)
+    
+    return jsonify({'media_atendimento': formatted_media_atendimento})
+
+@app.route('/api/grafico_atendimento')
+def get_contagem_atendimentos():
+    exe = conexao.cursor(dictionary=True)
+    exe.execute('''
+        SELECT
+            SUM(CASE WHEN MONTH(hora_fim_atedimento) = 1 THEN 1 ELSE 0 END) AS total_atendidas_janeiro,
+            SUM(CASE WHEN MONTH(hora_fim_atedimento) = 2 THEN 1 ELSE 0 END) AS total_atendidas_fevereiro,
+            SUM(CASE WHEN MONTH(hora_fim_atedimento) = 3 THEN 1 ELSE 0 END) AS total_atendidas_marco
+        FROM
+            atendente
+        WHERE
+            sit_atendimento = "Atendido";
+    ''')
+    result = exe.fetchall()  # Fetchall para obter todos os resultados
+    
+    exe.close()
+    
+    return jsonify(result)
+
+
+@app.route('/api/graf_pizza')
+def get_contagem_atendimentos_pizza():
+    exe = conexao.cursor(dictionary=True)
+    exe.execute('''
+        SELECT
+        SUM(CASE WHEN cod LIKE 'rg%' THEN 1 ELSE 0 END) AS primeiravia,
+        SUM(CASE WHEN cod LIKE '2rg%' THEN 1 ELSE 0 END) AS segundavia,
+        SUM(CASE WHEN cod NOT LIKE 'rg%' AND cod NOT LIKE '2rg%' THEN 1 ELSE 0 END) AS outros
+        FROM
+       recepcao
+       WHERE
+       sit_atendimento = 'Atendido';
+    ''')
+    result = exe.fetchall()  # Fetchall para obter todos os resultados
+    
+    exe.close()
+    
+    return jsonify(result)
 
 
 

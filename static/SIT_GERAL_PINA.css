@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+
+/* Ajuste opcional para o corpo da página */
+body {
+    margin: 0;
+}
+
+/* Estilo para o contêiner principal */
+.container-main {
+    display: flex;
+    height: 100vh;
+    /* Ocupa toda a altura da tela */
+}
+
+/* Estilo para o contêiner do List Group */
+.list-group-container {
+    flex: 0 0 20%;
+    /* Tamanho fixo de 20% da largura da tela */
+    background-color: #f8f9fa;
+    /* Cor de fundo */
+    border-right: 1px solid #dee2e6;
+    /* Adiciona uma borda à direita */
+}
+
+/* Estilo para o conteúdo da página */
+.content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    max-width: calc(100% - 20%);
+    /* Definindo a largura máxima */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+
+.list-group-item a {
+    display: block;
+    /* O link ocupa toda a largura do item */
+    padding: 0.75rem 1.25rem;
+    /* Espaçamento interno do link */
+    color: #007bff;
+    /* Cor do link */
+    text-decoration: none;
+    /* Remove o sublinhado */
+    cursor: pointer;
+    /* Altera o cursor para indicar que é clicável */
+}
+
+.list-group-item a:hover {
+    background-color: #c6dbf0;
+    /* Altera a cor de fundo ao passar o mouse */
+}
+
+.list-group-item a:focus {
+    background-color: #a1ccf3;
+    /* Altera a cor de fundo ao focar */
+}
+
+header {
+    margin-top: 0;
+    background-color: blue;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    color: white;
+}
+
+
+.card {
+    margin-bottom: 20px;
+    /* Espaçamento entre os cards */
+    flex-basis: calc(50% - 30px);
+    /* Define a largura dos cards */
+    max-width: calc(50% - 254px);
+    /* Largura máxima dos cards */
+    height: 122px;
+
+
+}
+
+.card-body {
+    padding: 20px;
+    /* Espaçamento interno do card */
+    display: flex;
+    /* Exibe os elementos em linha */
+    flex-direction: column;
+    /* Altera a direção dos elementos para uma coluna */
+    align-items: flex-start;
+    /* Alinha os elementos verticalmente à direita */
+    gap: 20px;
+    text-align: left;
+    /* Centraliza o texto à direita */
+}
+
+.card-title {
+    font-size: 28px;
+    /* Tamanho do título do card */
+    margin-bottom: 25px;
+    /* Espaçamento inferior do título */
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 20px;
+    /* Tamanho do texto do card */
+}
+
+.card-text span {
+    font-weight: bold;
+    /* Define o texto em negrito */
+}
+
+.grafico-container {
+    /* Ocupa todo o espaço disponível */
+    display: flex;
+    align-items: center;
+    /* Espaçamento superior para separar o gráfico dos cards */
+    width: 800px;
+    height: 500px;
+    border: 1px solid #dee2e6;
+    /* Adiciona uma borda */
+    border-radius: 5px;
+    /* Arredonda as bordas */
+
+    /* Adiciona um espaçamento interno */
+    box-sizing: border-box;
+    /* Faz com que a largura e altura incluam a borda e o preenchimento */
+    margin-bottom: 300px;
+}
+
+#grafico-setor {
+    /* Ocupa todo o espaço disponível */
+    display: flex;
+    align-items: center;
+    /* Espaçamento superior para separar o gráfico dos cards */
+    width: 600px;
+    height: 500px;
+    border: 1px solid #dee2e6;
+    /* Adiciona uma borda */
+    border-radius: 5px;
+    /* Arredonda as bordas */
+
+    /* Adiciona um espaçamento interno */
+    box-sizing: border-box;
+    /* Faz com que a largura e altura incluam a borda e o preenchimento */
+    margin-bottom: 300px;
+    margin-left: 50px;
+}
+
+/* Ajustes de layout para telas menores */
+@media (max-width: 768px) {
+    .container-main {
+        flex-direction: column;
+    }
+
+    .list-group-container {
+        flex: 0 0 100%;
+    }
+
+    .content {
+        flex: 1;
+        max-width: calc(100% - 20px);
+        /* O conteúdo ocupa toda a largura disponível, com margem de 20px */
+    }
+
+    .card {
+        flex-basis: calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+}
+
+
+.hist {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+    /* Cor da borda */
+    border-radius: 0.375rem;
+    /* Arredondamento das bordas */
+    margin-top: -260px;
+    /* Adicione esta linha */
+
+}
+
+.hist h4 {
+    margin-bottom: 1rem;
+    /* Espaçamento inferior para o título */
+    font-size: 1.25rem;
+    /* Tamanho do título */
+    font-weight: 600;
+    /* Peso da fonte */
+}
+
+.table-default {
+    width: 100%;
+    /* Largura total da tabela */
+    border-collapse: collapse;
+    /* Colapso das bordas da tabela */
+}
+
+.table-default th,
+.table-default td {
+    padding: 0.75rem;
+    /* Espaçamento interno das células */
+    border-bottom: 1px solid #e2e8f0;
+    /* Linha de separação entre as células */
+}
+
+.table-default th {
+    font-weight: 600;
+    /* Peso da fonte das células de cabeçalho */
+    text-align: left;
+    /* Alinhamento do texto à esquerda nas células de cabeçalho */
+    width: 2000px;
+}
+
+.table-default td {
+    vertical-align: top;
+    /* Alinhamento vertical ao topo nas células de dados */
+}
+
+.table-default tr:last-child td {
+    border-bottom: none;
+    /* Remoção da linha de separação da última linha */
+}
+
+.table-default tr:hover {
+    background-color: #f7fafc;
+    /* Cor de fundo ao passar o mouse sobre a linha */
+}
+
+.cursor-pointer {
+    cursor: pointer;
+    /* Cursor de ponteiro ao passar sobre o texto */
+}
+
+.font-semibold {
+    font-weight: 600;
+    /* Peso da fonte semi-negrito */
+}
+
+.hover:text-indigo-600:hover {
+    color: #4f46e5;
+    /* Cor do texto ao passar o mouse */
+}
+
+
+/*dava certo*/
