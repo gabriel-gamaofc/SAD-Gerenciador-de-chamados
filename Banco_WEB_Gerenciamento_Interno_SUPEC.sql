@@ -75,7 +75,7 @@ Data_Abertura timestamp default current_timestamp
 
 
 SELECT * FROM controle_Patrimonial_Pina ORDER BY Data_Abertura DESC;
-DROP TABLE controle_Patrimonial_Pina;
+
 create table usuarios(
 id integer primary key auto_increment,
 email varchar(250),
