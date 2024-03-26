@@ -19,7 +19,7 @@ app = Flask(__name__)
 
 # Configurar a conexão com o banco de dados MySQL
 connection = mysql.connector.connect(
-    host='',
+    host='',#ip da maquina
     user='',
     password='',
     database=''
@@ -83,7 +83,7 @@ def Cadastro_Maquinas_Pina():
 @app.route('/Chamados_TI_Pina')
 def Chamados_TI_Pina():
       # Extrair o ID da planilha do URL
-    sheet_url = ''
+    sheet_url = ''#Link da planilha
     
     sheet_id = sheet_url.split('/')[-2]
 
@@ -372,7 +372,7 @@ def preencher_formulario():
     driver = webdriver.Chrome()
    
     # Navegar até a URL do formulário
-    driver.get('')
+    driver.get('')#link do formulario
 
    
     time.sleep(5)
